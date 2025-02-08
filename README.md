@@ -54,15 +54,15 @@ Below is a demonstration of how the User Interface works:
 
 ## Data
 
-The dataset `german_credit_data.csv` containing information about 1000 individuals is used for training and testing the model. The following features are used for the analysis:
-- Age
-- Gender
-- Number of jobs
-- Type of property ownership
-- Total value of saving accounts
-- Current account amount
-- Duration of credit
-- Purpose of credit
+The dataset `german_credit_data.csv` [Kaggle](https://www.kaggle.com/datasets/uciml/german-credit) containing information about 1000 individuals is used for training and testing the model. The following features are used for the analysis:
+- Age (numeric)
+- Sex (text: male, female)
+- Job (numeric: 0 - unskilled and non-resident, 1 - unskilled and resident, 2 - skilled, 3 - highly skilled)
+- Saving accounts (text - little, moderate, quite rich, rich)
+- Checking account (text - little, moderate, rich)
+- Credit amount (numeric, in Deutsch Mark)
+- Duration of credit (numeric, in month)
+- Purpose (text: car, furniture/equipment, radio/TV, domestic appliances, repairs, education, business, vacation/others)
 
 ## Technical Description
 
