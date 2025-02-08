@@ -11,3 +11,4 @@ dependencies:
   - scikit-learn=1.6.1
   - streamlit=1.42.0
   - joblib=1.4.2
+  - plotly=6.0.0
