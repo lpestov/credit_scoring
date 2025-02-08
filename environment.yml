@@ -12,3 +12,4 @@ dependencies:
   - streamlit=1.42.0
   - joblib=1.4.2
   - plotly=6.0.0
+  - jupyter=1.1.1
