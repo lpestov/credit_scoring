@@ -32,7 +32,7 @@ Job = st.number_input("Работа", min_value=0, max_value=3, value=1)
 Housing = translation[st.selectbox("Недвижимость", ('В собственности', 'Нет', 'Аренда'))]
 Saving_accounts = translation[st.selectbox("Совокупный размер сберегательных счетов", ('Нет информации', 'Малый', 'Достаточно большой', 'Большой', 'Умеренный'))] 
 Checking_account = translation[st.selectbox("Размер текущего счёта", ('Нет информации', 'Малый', 'Умеренный', 'Большой'))] 
-Duration = st.number_input("Длительность", min_value=3, max_value=72, value=3)
+Duration = st.number_input("Длительность в месяцах", min_value=3, max_value=72, value=3)
 Purpose = translation[st.selectbox("Цель", ('Радио/Телевидение', 'Образование', 'Мебель/Оборудование', 'Автомобиль', 'Бизнес', 'Бытовая Техника', 'Ремонт', 'Отпуск/Другое')
 )] 
 if not (18 <= Age <= 75):
