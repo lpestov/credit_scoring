@@ -5,7 +5,7 @@ import pandas as pd
 
 def preprocess(features):
     # Загружаем имена колонок
-    column_names = pd.read_csv('data/german_credit_data.csv', nrows=0).columns
+    column_names = pd.read_csv('../data/german_credit_data.csv', nrows=0).columns
 
     # Удаляем таргет и дубликат индекса
     column_names = column_names.drop(['Credit amount', 'Unnamed: 0'])
@@ -17,10 +17,10 @@ def preprocess(features):
     categorical_columns = ['Sex', 'Housing', 'Checking account', 'Purpose']
 
     # Загрузим OneHotEncoder
-    ohe = joblib.load('models/one_hot_encoder.joblib')
+    ohe = joblib.load('../models/one_hot_encoder.joblib')
 
     # Загрузим OrdinalEncoder
-    oe = joblib.load('models/ordinal_encoder.joblib')
+    oe = joblib.load('../models/ordinal_encoder.joblib')
 
     # Применяем кодирование
     input_series['Saving accounts'] = oe.transform(input_series[['Saving accounts']])
@@ -36,7 +36,7 @@ def preprocess(features):
     input_series = input_series.replace([np.inf, -np.inf], np.nan)
 
     # Скалирование
-    scaler = joblib.load('scaler.joblib')
+    scaler = joblib.load('../models/scaler.joblib')
     input_series = scaler.transform(input_series)
 
     return input_series

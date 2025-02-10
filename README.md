@@ -26,18 +26,23 @@ This project implements a machine learning model to determine the creditworthine
    ```
 2. Change to the project directory:
    ```bash
-   cd project_name
+   cd credit_scoring/env
    ```
 3. Create and activate a conda environment using the configuration file `environment.yml`:
    ```bash
    conda env create --file environment.yml
    conda activate credit-scoring
    ```
-4. Launch the User Interface:
+4. Change to the project directory:
+   ```bash
+   ..
+   cd credit_scoring/src
+   ```
+5. Launch the User Interface:
    ```bash
    streamlit run UI.py
    ```
-5. Make sure that the installed scikit-learn version is correct (recommended scikit-learn 1.6.1). If necessary, update it:
+6. Make sure that the installed scikit-learn version is correct (recommended scikit-learn 1.6.1). If necessary, update it:
    ```bash
    conda install scikit-learn=1.6.1
    ```
@@ -67,19 +72,19 @@ The dataset `german_credit_data.csv` [Kaggle](https://www.kaggle.com/datasets/uc
 ## Technical Description
 
 ### Main Project Files:
-- [UI.py](UI.py)  
+- [UI.py](src/UI.py)  
   Implements a web interface using Streamlit for collecting user input and displaying the prediction, which is executed by the `predict` function.
 
-- [input_processing.py](input_processing.py)  
+- [input_processing.py](src/input_processing.py)  
   Contains the function for preprocessing the user input data before it is passed to the model for prediction.
 
-- [one_hot_encoder.joblib](one_hot_encoder.joblib)  
+- [one_hot_encoder.joblib](models/one_hot_encoder.joblib)  
   Saved one-hot encoder used for categorical features.
 
-- [ordinal_encoder.joblib](ordinal_encoder.joblib)  
+- [ordinal_encoder.joblib](models/ordinal_encoder.joblib)  
   Ordinal encoder for the "Saving accounts" feature.
 
-- [scaler.joblib](scaler.joblib)  
+- [scaler.joblib](models/scaler.joblib)  
   Saved scaler for data standardization.
 
 ### Solution Description:
@@ -88,4 +93,4 @@ The dataset `german_credit_data.csv` [Kaggle](https://www.kaggle.com/datasets/uc
 - Two models, Random Forest Classifier and Gradient Boosting Classifier, were compared to determine creditworthiness. Hyperparameter tuning was performed using GridSearch.
 - The best results were achieved with the Gradient Boosting model (ROC AUC: 0.764 on the test dataset).
 
-Data analysis, model training, and testing are detailed in the [Credit_scoring_final.ipynb](Credit_scoring_final.ipynb) notebook.
+Data analysis, model training, and testing are detailed in the [Credit_scoring_final.ipynb](notebooks/Credit_scoring_final.ipynb) notebook.

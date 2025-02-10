@@ -8,7 +8,7 @@ from input_processing import preprocess
 
 # Функция для предсказания на основе входных данных
 def predict(features):
-    model = joblib.load("models/best_credit_risk_model.joblib")
+    model = joblib.load("../models/best_credit_risk_model.joblib")
     return model.predict(preprocess(features))
 
 #Заголовок для приложения
